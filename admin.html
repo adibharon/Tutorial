@@ -1,0 +1,24 @@
+﻿<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f0ebf8">
+<title>Tutorial Setup | Student Quiz</title><link rel="stylesheet" href="style.css?v=english1"></head>
+<body><main class="page-shell">
+<header class="form-header"><div class="header-mark" aria-hidden="true">✎</div><p class="eyebrow">LECTURER FORM</p><h1>Tutorial Setup</h1><p class="subtitle">Set the form dates, enter a title, import 10 questions, and set the answer key.</p></header>
+<form id="teacher-form" class="form-card">
+<label class="field-label" for="valid-from">Form valid from <span>*</span></label>
+<input id="valid-from" name="valid_from" type="date" class="answer-key-input" required>
+<label class="field-label" for="valid-until">Form valid until <span>*</span></label>
+<input id="valid-until" name="valid_until" type="date" class="answer-key-input" required>
+<p class="helper">These dates are saved when you click <strong>Save quiz</strong>.</p>
+<label class="field-label" for="quiz-title">Title <span>*</span></label>
+<input id="quiz-title" name="quiz_title" type="text" maxlength="150" class="answer-key-input" placeholder="For example: Engineering Ethics Quiz" required>
+<label class="field-label" for="latex-source">LaTeX source <span>*</span></label>
+<textarea id="latex-source" name="latex_source" class="bulk-latex" maxlength="80000" placeholder="Paste all 10 question blocks here. Each question starts with \\textbf{Question 1}, followed by choices inside \\begin{enumerate} ... \\end{enumerate}." required></textarea>
+<p class="helper">Each heading must run from <code>\textbf{Question 1}</code> to <code>\textbf{Question 10}</code>. Each block must contain one <code>enumerate</code> with exactly four <code>\item</code> choices (A–D). LaTeX formulas are preserved.</p>
+<label class="field-label" for="answer-key">Answer key <span>*</span></label>
+<input id="answer-key" name="answer_key" type="text" class="answer-key-input" placeholder="1:B, 2:A, 3:D, 4:C, 5:B, 6:A, 7:D, 8:C, 9:B, 10:A" required>
+<p class="helper">Enter one correct answer per question using <code>number:letter</code> format.</p>
+<div class="button-row"><button id="save-button" type="submit">Save quiz <span aria-hidden="true">→</span></button></div>
+<p id="teacher-status" class="status" role="status" aria-live="polite"></p>
+<a class="student-link" href="/">View student form</a><a class="student-link" href="/rekod">View student records</a>
+</form><footer>Your quiz title, validity dates, questions, and answer key are stored on the quiz server.</footer></main><script src="admin.js?v=save-message-order1"></script></body></html>
+

@@ -1,0 +1,9 @@
+﻿<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f0ebf8"><title>Student Records</title><link rel="stylesheet" href="style.css?v=english1"></head>
+<body><main class="page-shell records-shell">
+<header class="form-header"><div class="header-mark" aria-hidden="true">▤</div><p class="eyebrow">LECTURER FORM</p><h1>Student records</h1><p class="subtitle">Review submitted answers and scores.</p></header>
+<section class="form-card records-card"><div class="records-toolbar"><p id="record-count" class="helper">Loading records…</p><div class="records-actions"><button id="export-button" type="button" class="secondary-button" disabled>Download CSV</button><button id="clear-button" type="button" class="danger-button" disabled>Clear all records</button></div></div>
+<p id="records-status" class="status" role="status" aria-live="polite"></p>
+<div class="table-scroll"><table><thead><tr><th>Name</th><th>Student ID</th><th>Group</th><th>Score</th><th>Submitted (UTC)</th><th>Answers</th></tr></thead><tbody id="records-body"></tbody></table></div>
+<p class="privacy-note">Records are stored in the quiz server database. Keep a separate backup.</p><a class="student-link" href="/guru">Back to Lecturer Form</a><a class="student-link" href="/">Back to Student Form</a></section>
+</main><script src="responses.js?v=clear-records1"></script></body></html>
+

@@ -1,0 +1,86 @@
+﻿:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202124;
+  background: #f0ebf8;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; padding: 42px 18px; }
+.page-shell { width: min(100%, 650px); margin: 0 auto; }
+.form-header, .form-card { background: #fff; border: 1px solid #dadce0; border-radius: 12px; }
+.form-header { position: relative; overflow: hidden; padding: 28px 30px 26px; border-top: 10px solid #673ab7; }
+.header-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #eee6fa; color: #673ab7; font-size: 24px; font-weight: 700; }
+.eyebrow { color: #673ab7; font-size: 11px; font-weight: 700; letter-spacing: .13em; margin: 20px 0 8px; }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.15; margin: 0; font-weight: 600; }
+.subtitle { color: #5f6368; margin: 11px 0 0; line-height: 1.5; }
+.form-card { margin-top: 14px; padding: 26px 30px 22px; }
+.required-note { color: #5f6368; font-size: 13px; padding-bottom: 22px; border-bottom: 1px solid #eee; margin-bottom: 20px; }
+.field-label, legend { display: block; font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.field-label span, legend span, .required-note span { color: #d93025; }
+input[type="text"] { width: 100%; border: 0; border-bottom: 1px solid #dadce0; border-radius: 4px 4px 0 0; background: #fafafa; padding: 13px 12px; font-size: 15px; margin-bottom: 25px; outline: none; }
+input[type="text"]:focus { border-bottom: 2px solid #673ab7; background: #f8f5fc; }
+.answer-fieldset { border: 0; padding: 0; margin: 0 0 20px; }
+.answer-fieldset legend { margin-bottom: 7px; }
+.helper { color: #5f6368; font-size: 13px; margin: 0 0 13px; }
+.choices { display: grid; gap: 9px; }
+.choice { min-height: 54px; display: flex; align-items: center; gap: 13px; border: 1px solid #dadce0; border-radius: 8px; padding: 9px 13px; cursor: pointer; transition: border-color .15s, background .15s; }
+.choice:hover { border-color: #a58bd2; background: #faf8fd; }
+.choice:has(input:checked) { border-color: #673ab7; background: #f7f3fc; }
+.choice input { accent-color: #673ab7; width: 18px; height: 18px; margin: 0; }
+.choice-letter { width: 29px; height: 29px; border-radius: 50%; display: grid; place-items: center; background: #f1f3f4; font-weight: 700; color: #5f6368; }
+.status { min-height: 22px; margin: 8px 0 12px; color: #b3261e; font-size: 14px; }
+.status.success { color: #137333; }
+button { border: 0; border-radius: 6px; background: #673ab7; color: white; font-size: 15px; font-weight: 600; padding: 13px 20px; cursor: pointer; }
+button:hover { background: #512da8; }
+button:disabled { opacity: .65; cursor: wait; }
+button span { padding-left: 8px; }
+.privacy-note { color: #70757a; font-size: 12px; line-height: 1.5; margin: 18px 0 0; }
+footer { text-align: center; color: #77717f; font-size: 12px; padding: 22px 0 8px; }
+@media (max-width: 500px) { body { padding: 20px 12px; } .form-header, .form-card { padding-left: 20px; padding-right: 20px; } }
+/* Question and teacher-editor additions */
+.hidden { display: none !important; }
+.question-box, .preview-box { border: 1px solid #e1d8ed; background: #fcfaff; border-radius: 9px; padding: 18px; margin: 6px 0 22px; }
+.question-box h2, .preview-box h2 { font-size: 16px; margin: 0 0 12px; }
+.math-content { line-height: 1.7; overflow-wrap: anywhere; }
+.question-box .math-content { font-size: 17px; }
+textarea { width: 100%; min-height: 100px; resize: vertical; border: 1px solid #dadce0; border-radius: 7px; padding: 12px; font: inherit; font-size: 14px; line-height: 1.5; margin: 0 0 18px; }
+textarea:focus { outline: 2px solid #c6b4e4; border-color: #673ab7; }
+.teacher-options { display: grid; gap: 8px; margin: 14px 0; }
+.teacher-option { display: grid; grid-template-columns: 20px 30px 1fr; gap: 10px; align-items: start; }
+.teacher-option input[type="radio"] { accent-color: #673ab7; margin: 12px 0 0; width: 18px; height: 18px; }
+.teacher-option .choice-letter { margin-top: 5px; }
+.teacher-option textarea { min-height: 62px; margin: 0; }
+.preview-question { padding-bottom: 12px; border-bottom: 1px solid #eee; }
+.preview-options p { margin: 12px 0 0; }
+.student-link { display: inline-block; margin: 0 0 0 18px; color: #673ab7; font-weight: 600; font-size: 14px; }
+/* Bulk 10-question quiz layout */
+.bulk-latex { min-height: 360px; font-family: Consolas, "Courier New", monospace; }
+.answer-key-input { margin-top: 2px; }
+.button-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.secondary-button { background: #f1ecf8; color: #4f347e; border: 1px solid #d6c9e9; }
+.secondary-button:hover { background: #e9e0f5; }
+.records-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.danger-button { background: #b3261e; }
+.danger-button:hover { background: #8c1d18; }
+.preview-question-card { border-top: 1px solid #e6e0ed; padding: 16px 0; }
+.preview-question-card h3 { font-size: 15px; margin: 0 0 10px; color: #673ab7; }
+.preview-question-card ol { padding-left: 32px; }
+.preview-question-card li { padding: 4px 0 4px 6px; }
+.answer-key-preview { color: #137333; font-size: 13px; font-weight: 600; }
+.student-question { border: 1px solid #e1d8ed; background: #fcfaff; border-radius: 9px; padding: 18px; margin: 16px 0; min-width: 0; }
+.student-question legend { color: #673ab7; font-size: 17px; padding: 0 5px; }
+.student-prompt { white-space: pre-wrap; margin: 6px 0 16px; }
+.student-question .choices { margin-top: 10px; }
+code { background: #f1f3f4; padding: 2px 4px; border-radius: 4px; font-size: .92em; }
+.records-shell { width: min(100%, 1100px); }
+.records-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.records-toolbar .helper { margin: 0; }
+.table-scroll { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 12px 10px; border-bottom: 1px solid #e5e1e9; }
+th { color: #5f6368; font-size: 12px; white-space: nowrap; }
+td { min-width: 100px; }
+td:last-child { min-width: 210px; }
+td details p { max-width: 400px; line-height: 1.6; color: #5f6368; }
+summary { color: #673ab7; cursor: pointer; font-weight: 600; }
+@media (max-width: 600px) { .records-toolbar { align-items: flex-start; flex-direction: column; } .records-card { padding-left: 16px; padding-right: 16px; } }

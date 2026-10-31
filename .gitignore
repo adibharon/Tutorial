@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+*.log
+.env
+respons.db
+respons.db-shm
+respons.db-wal
